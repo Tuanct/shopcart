@@ -1,6 +1,6 @@
 var Product = new require('../models/product');
 var mongoose = require('mongoose');
-var mongoose.connect('mongodb://localhost/shopcart');
+mongoose.connect('mongodb://localhost:27017/shopcart');
 var products =[ 
 	new Product ({
 		imagePath: "poster.medium.jpg",
