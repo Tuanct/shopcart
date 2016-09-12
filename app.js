@@ -4,13 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var expressHbs = require('express-handlebars');
-var routes = require('./routes/index');
 var mongoose = require('mongoose');
+var expressHbs = require('express-handlebars');
+var session = require('express-session');
+var passport = require('passport');
+var flash = require('connect-flash');
+
+var routes = require('./routes/index');
 
 var app = express();
 
-var mongoose.connect('localhost:27017/shopcart');
+mongoose.connect('mongodb://localhost:27017/shopcart');
+require('./config/passport');
+
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: "layout", extname: '.hbs'}));
 // app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +28,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({secret: "mysupersecter", resave: false, saveUninitialized: false}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
