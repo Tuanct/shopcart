@@ -1,6 +1,6 @@
 var passport = require("passport");
 var User = require("../models/user");
-var LocalStratery = require('passport-local');
+var LocalStrategy = require('passport-local').Strategy;
  
 passport.serializeUser(function(user, done){
 	done(null, user.id);
@@ -12,17 +12,17 @@ passport.deserializeUser(function(id, done){
 	});
 });
 
-passport.use('local.signup', new LocalStratery({
-	usernameField: "email",
-	passwordField: "password",
+passport.use('local.signup', new LocalStrategy ({
+	passwordField: 'password',
+	usernameField: 'email',
 	passReqToCallBack: true,
-},function(req, email, password, done){
+},function(email, password, done){
 	User.findOne({'email': email}, function(err, user){
 		if (err){
 			return done(err);
 		}
 		if (user){
-			return done('null', false, {message: "Email is alrealy in use!"});
+			return done(null, false, {message: 'Email is already in use!'});
 		}
 
 		var newUser = new User();
