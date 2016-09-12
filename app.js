@@ -9,7 +9,7 @@ var expressHbs = require('express-handlebars');
 var session = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
-
+var validator = require('express-validator');
 var routes = require('./routes/index');
 
 var app = express();
@@ -27,6 +27,7 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator());
 app.use(cookieParser());
 app.use(session({secret: "mysupersecter", resave: false, saveUninitialized: false}));
 app.use(flash());
