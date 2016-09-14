@@ -15,10 +15,10 @@ module.exports = function Cart(oldCart){
 	};
 
 	this.generateArray = function(){
-		var arr = [];
-		for (var id=0; id++; id< this.itmes.length){
-			arr.push(this.items[id]);
-		}
-		return arr;console.log(arr);
+		// var arr = [];
+		// for (var id=0; id++; id< this.itmes.length){
+		// 	arr.push(this.items[id]);
+		// }
+		return this.itmes;
 	};
 };
