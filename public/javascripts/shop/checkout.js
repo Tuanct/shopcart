@@ -9,8 +9,8 @@ $form.submit(function(event) {
     Stripe.card.createToken({
     	number: $('#cart-number').val(),
     	cvc: $('#cvc').val(),
-    	exp-month: $('#exp-month').val(),
-    	exp-year: $('#exp-year').val(),
+    	exp_month: $('#exp-month').val(),
+    	exp_year: $('#exp-year').val(),
     	name: $('#cart-name').val(),
     }, stripeResponseHandler);
 
