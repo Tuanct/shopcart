@@ -24,17 +24,20 @@
 	                        </div>
 	                    </div></td>
 	                    <td class="col-md-1" style="text-align: center">
-	                    <input type="number" class="form-control" id="qty" name="qty" value="{{this.qty}}" min="0" max="1000">
-	                    </td>
-	                    <td class="col-md-1 text-center"><strong>${{this.item.price}}</strong></td>
-	                    <td class="col-md-1 text-center"><strong>${{this.price}}</strong></td>
-	                    <td class="col-md-1">
-	                    <button type="button" class="btn btn-success" id="update" name="remove">
-	                        <i class="fa fa-refresh" aria-hidden="true"></i>
-	                    </button>
-	                    <button type="button" class="btn btn-danger" id="remove" name="remove">
-	                        <i class="fa fa-times" aria-hidden="true"></i>
-	                    </button></td>
+			                <form action="/edit-cart/{{this.item._id}}" method="get" accept-charset="utf-8">
+			                    <input type="number" class="form-control" id="qty" name="qty" value="{{this.qty}}" min="0" max="1000">
+			                    </td>
+			                    <td class="col-md-1 text-center"><strong>${{this.item.price}}</strong></td>
+			                    <td class="col-md-1 text-center"><strong>${{this.price}}</strong></td>
+			                    <td class="col-md-1">
+			                    <button type="submit" class="btn btn-success" id="update">
+			                        <i class="fa fa-refresh" aria-hidden="true"></i>
+			                    </button>
+			                </form>
+			                	<a type="button" class="btn btn-danger" id="remove" href="/delete-item-cart/{{this.item._id}}">
+			                        <i class="fa fa-times" aria-hidden="true"></i>
+			                    </<a href="" title=""></a>
+		                </td>
 	                </tr>
 	                {{/each}}
 	                <tr>

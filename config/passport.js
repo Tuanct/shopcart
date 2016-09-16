@@ -17,7 +17,7 @@ passport.use('local.signup', new LocalStrategy ({
     passwordField : 'password',
     telField : 'tel',
     addressField : 'address',
-    nameField : 'address',
+    nameField : 'name',
     passReqToCallback : true
 },function(req, email, password, done){
 	req.checkBody('email', 'Invalid email').notEmpty().isEmail();
