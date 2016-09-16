@@ -3,28 +3,16 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/shopcart');
 var products =[ 
 	new Product ({
-		imagePath: "poster.medium.jpg",
-		title: "Harry Postter 1",
-		description: "Harry Potter và Hòn Đá Phù Thủy là bộ phim đầu tiên trong series phim “Harry Potter” được xây dựng dựa trên tiểu thuyết của nhà văn J.K.Rowling.",
-		price: 17,
+		imagePath: "6.jpg",
+		title: "Harry Potter 6",
+		description: "arry Potter và Hoàng tử lai (tiếng Anh: Harry Potter and the Half-Blood Prince) là quyển sách thứ sáu trong bộ sách giả tưởng nổi tiếng Harry Potter của tác giả J.K. Rowling..",
+		price: 22,
 	}),
 	new Product ({
-		imagePath: "2.jpg",
-		title: "Harry Postter 2",
-		description: "Harry Potter and the Chamber of Secrets is the second novel in the Harry Potter series, written by J. K. Rowling. ",
-		price: 18,
-	}),
-	new Product ({
-		imagePath: "3.jpg",
-		title: "Harry Postter 3",
-		description: "Harry Potter and the Prisoner of Azkaban is the third novel in the Harry Potter series, written by J. K. Rowling.",
-		price: 19,
-	}),
-	new Product ({
-		imagePath: "4.jpg",
-		title: "Harry Postter 4",
-		description: "Harry';s fourth year at Hogwarts is about to start and he is enjoying the summer vacation with his friends.",
-		price: 20,
+		imagePath: "7.jpg",
+		title: "Harry Postter 7",
+		description: "Harry Potter và Bảo bối Tử thần (nguyên tác tiếng Anh: Harry Potter and the Deathly Hallows) là cuốn sách thứ bảy và cũng là cuối cùng của bộ tiểu thuyết giả tưởng Harry Potter của nhà văn Anh J.K. Rowling. ",
+		price: 23,
 	}),
 ];
 
