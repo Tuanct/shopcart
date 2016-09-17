@@ -19,7 +19,7 @@ module.exports = function Cart(oldCart){
 		var oldPrice = this.items[id].price;
 		this.items[id].qty = qty ;
 		this.items[id].price = this.items[id].item.price * qty;
-		this.totalQty = this.totalQty - oldQty + qty;
+		this.totalQty = parseInt(this.totalQty) - parseInt(oldQty) + parseInt(qty);
 		this.totalPrice = this.totalPrice - oldPrice + this.items[id].price;
 		 if ( this.items[id].qty <= 0){
 		 	delete this.items[id];
