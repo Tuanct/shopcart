@@ -1,0 +1,14 @@
+sourcecode/node_modules
+sourcecode/public/hot
+sourcecode/public/storage
+sourcecode/storage/*.key
+sourcecode/vendor/*
+sourcecode/.idea
+sourcecode/.vagrant
+sourcecode/Homestead.json
+sourcecode/Homestead.yaml
+sourcecode/npm-debug.log
+sourcecode/.env
+sourcecode/composer.lock
+/nbproject/private/
+/.idea
